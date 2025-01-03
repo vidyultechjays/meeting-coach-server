@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-h(s)v5%+d(y(lp&t%lv-faxbcri_v4qc3j*)&tovr%7v933!ob
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -81,12 +81,16 @@ WSGI_APPLICATION = 'meeting_coach_server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+CURRENT_ENVIRONMENT = os.environ.get('ENV')
+
+# CURRENT_ENVIRONMENT = 'production'
+if CURRENT_ENVIRONMENT == 'production':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
 
 
 # Password validation
@@ -129,3 +133,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.replit.dev",
+    "https://*.pike.replit.dev",  # For all subdomains under replit.dev
+    "https://meeting-coach-server.replit.app",
+    "http://localhost",  # Localhost for development (ensure you need http)
+    "https://localhost",  # Secure localhost (if needed)
+]
