@@ -20,5 +20,8 @@ from transcription import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.landing_page, name='landing'),
+    path('download-extension/', views.download_extension, name='download-extension'),
     path('api/transcribe/', views.transcribe, name='transcribe'),
+    path('api/coaching/', views.coaching, name='coaching'),
 ]
