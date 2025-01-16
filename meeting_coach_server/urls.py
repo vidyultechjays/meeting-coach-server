@@ -24,4 +24,6 @@ urlpatterns = [
     path('download-extension/', views.download_extension, name='download-extension'),
     path('api/transcribe/', views.transcribe, name='transcribe'),
     path('api/coaching/', views.coaching, name='coaching'),
+    path('api/auth/google/', views.google_auth, name='google_auth'),
+    path('api/auth/revoke/', views.revoke_token, name='revoke_token'),
 ]
