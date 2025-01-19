@@ -1,4 +1,3 @@
-# transcription/views.py
 import json
 import os
 from django.http import FileResponse, JsonResponse
