@@ -1,26 +1,149 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Coach Extension</title>
     <link rel="stylesheet" href="{% static 'css/download_extension_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="logo-and-title">
+                <div class="logo-container">
+                    <img src="{% static 'images/techjays_logo.jpg' %}" alt="Meeting Coach Logo">
+                </div>
+                <h1>Meeting Coach Extension</h1>
+            </div>
+            <p class="tagline">Enhance your meeting experience with real-time transcription and AI-powered coaching</p>
+            <a href="/download-extension/" class="download-button pulse">
+                <i class="fas fa-download"></i> Download Extension
+            </a>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>Meeting Coach Extension</h1>
-        <p>Enhance your meeting experience with real-time transcription and AI-powered coaching</p>
-        <a href="/download-extension/" class="download-button">Download Extension</a>
+        <div class="section-title">
+            <h2>Features</h2>
+            <div class="underline"></div>
+        </div>
         
         <div class="features">
             <div class="feature">
-                <h3>✍️ Real-time Transcription</h3>
-                <p>Automatically transcribe your meetings with high accuracy</p>
+                <div class="feature-icon">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <h3>Real-time Transcription</h3>
+                <p>Automatically transcribe your meetings with high accuracy. Never miss important details again.</p>
             </div>
             <div class="feature">
-                <h3>🤖 AI Coaching</h3>
-                <p>Get instant feedback and insights about your meetings</p>
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Coaching</h3>
+                <p>Get instant feedback and insights about your meetings to improve your communication skills.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Performance Analytics</h3>
+                <p>Track your meetings and identify areas for improvement with detailed analytics.</p>
             </div>
         </div>
+
+        <div class="section-title">
+            <h2>Installation Guide</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="installation-guide">
+            <div class="installation-step">
+                <div class="step-icon">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-file-archive"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Download the Extension</h3>
+                    <p>Click the download button at the top of this page to get the extension ZIP file</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-icon">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-file-export"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Extract the ZIP File</h3>
+                    <p>Right-click the downloaded ZIP file and select "Extract All..." option</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-icon">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Open Chrome Extensions</h3>
+                    <p>Go to Chrome and select Extensions → Manage extensions from the side panel</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-icon">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Enable Developer Mode</h3>
+                    <p>Turn on the Developer mode toggle button in the top right corner</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-icon">
+                    <div class="step-number">5</div>
+                    <i class="fas fa-upload"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Load the Extension</h3>
+                    <p>Click on "Load unpacked" button and select the extracted folder of the extension</p>
+                </div>
+            </div>
+            
+            <div class="installation-step">
+                <div class="step-icon">
+                    <div class="step-number">6</div>
+                    <i class="fas fa-video"></i>
+                </div>
+                <div class="step-content">
+                    <h3>Use in Google Meet</h3>
+                    <p>When you enter a Google Meet, select the extension from the extensions icon in the top right panel</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ready-to-start">
+            <h2>Ready to enhance your meetings?</h2>
+            <a href="/download-extension/" class="secondary-download-button">
+                <i class="fas fa-download"></i> Download Now
+            </a>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="{% static 'images/techjays_logo.jpg' %}" alt="Meeting Coach Logo">
+                <p>Meeting Coach</p>
+            </div>
+            <p class="copyright">© 2025 Meeting Coach. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
