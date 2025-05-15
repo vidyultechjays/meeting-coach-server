@@ -161,3 +161,44 @@ def download_extension(request):
         return response
     else:
         return JsonResponse({'error': 'Extension file not found'}, status=404)
+    
+@csrf_exempt
+def follow_up(request):
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+    
+    try:
+        # Parse the JSON body
+        body = json.loads(request.body)
+        transcript = body.get('transcript')
+        
+        # Check for missing fields
+        if not transcript:
+            return JsonResponse({'error': 'Missing required transcript'}, status=400)
+        
+        # Prepare the request to OpenAI
+        url = 'https://api.openai.com/v1/chat/completions'
+        headers = {
+            'Authorization': f'Bearer {settings.OPENAI_API_KEY}',
+            'Content-Type': 'application/json',
+        }
+        
+        data = {
+            'model': 'gpt-4o',
+            'messages': [
+                {'role': 'system', 'content': 'You are a professional meeting coach. This is a live meeting transcript of the other user speaking to you.'},
+                {'role': 'user', 'content': f'Transcript: {transcript}\n\n Provide follow up questions for this transcript, each questions should have a serial number and should be seprated by a new line character."'}
+            ],
+            'temperature': 0.7,
+        }
+        
+        # Get response from OpenAI
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()  # Handle errors
+
+        # Return OpenAI's response
+        return JsonResponse(response.json())
+    
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+

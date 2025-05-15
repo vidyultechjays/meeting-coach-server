@@ -26,4 +26,5 @@ urlpatterns = [
     path('api/coaching/', views.coaching, name='coaching'),
     path('api/auth/google/', views.google_auth, name='google_auth'),
     path('api/auth/revoke/', views.revoke_token, name='revoke_token'),
+    path('api/follow_up/', views.follow_up, name='follow_up'),
 ]
