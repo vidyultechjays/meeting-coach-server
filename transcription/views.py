@@ -8,7 +8,7 @@ import requests
 import logging
 
 
-CHUNK_SIZE: int = 5000
+CHUNK_SIZE: int = 5000  #chunk size for the transcriptions
 
 @csrf_exempt
 def google_auth(request):
@@ -125,6 +125,9 @@ def split_text(text, size):
 
 
 logger = logging.getLogger(__name__)
+
+
+
 
 def summarize_chunk(chunk):
     """Call OpenAI to summarize a transcript chunk."""
