@@ -24,9 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h(s)v5%+d(y(lp&t%lv-faxbcri_v4qc3j*)&tovr%7v933!ob'
+GOOGLE_API_BASE_URL = 'https://www.googleapis.com'
+GOOGLE_API_VERSION = 'oauth2/v3'
+GOOGLE_API_USERINFO_ENDPOINT = 'userinfo'
+GOOGLE_ACCOUNTS_BASE_URL = 'https://accounts.google.com'
+GOOGLE_OAUTH_REVOKE_ENDPOINT = 'o/oauth2/revoke'
+OPENAI_API_BASE_URL = 'https://api.openai.com'
+OPENAI_API_VERSION = 'v1'
+OPENAI_AUDIO_TRANSCRIPTION_ENDPOINT = 'audio/transcriptions'
+OPENAI_CHAT_COMPLETION_ENDPOINT = 'chat/completions'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
